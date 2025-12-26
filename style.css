@@ -1,0 +1,857 @@
+/* style.css - The Site A "Skin" */
+
+/* 1. IMPORT FONTS (Raleway for headings, Open Sans for body) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700;800&display=swap');
+
+/* 2. DEFINE VARIABLES (The Colors of Site A) */
+:root {
+    --primary-color: #0e223d;    /* Deep Navy Blue */
+    --secondary-color: #f4c613;  /* Mustard Gold */
+    --accent-color: #25527a;     /* Light Blue */
+    --light-bg: #f8f9fa;         /* Light Grey */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+}
+
+/* 3. BASE STYLES */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+/* 4. UTILITY CLASSES */
+.text-gold { color: var(--secondary-color) !important; }
+.bg-navy { background-color: var(--primary-color) !important; color: white; }
+
+/* 5. RESET OLD IMAGES (To prevent them from exploding the layout) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* --- HEADER STYLES --- */
+
+/* 1. The Top Dark Bar */
+.top-bar {
+    background-color: var(--primary-color); /* Navy Blue */
+    color: white;
+    font-size: 0.9rem;
+}
+
+.top-bar i {
+    color: var(--secondary-color); /* Gold Icon */
+    margin-right: 5px;
+}
+
+/* 2. The Main Navigation */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+    padding: 15px 0;
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 10px 15px !important;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important; /* Gold on hover */
+}
+
+/* 3. The "Contact" Button Style */
+.btn-contact {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-radius: 0; /* Square edges like Site A */
+    padding: 8px 25px;
+}
+
+.btn-contact:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
+}
+
+/* 4. FIX THE ZOOMED LOGO */
+.navbar-brand img {
+    height: 70px; /* Forces logo to be neat */
+    width: auto;
+}
+/* --- SITE A HERO SECTION (Final Polish) --- */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* BACKGROUND IMAGE with Dark Overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/hero-bg.jpg'); /* Make sure this image exists! */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 20px;
+    z-index: 2;
+
+    margin-top: -100px; /* Adjusts vertical position */
+}
+
+/* 1. The Conference Acronym (ICICCC-2026) */
+.hero-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4.5rem; /* Very large like the screenshot */
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: -30px; 
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.6); /* Strong shadow for readability */
+}
+
+/* 2. The Full Name */
+.hero-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    color: #f8f9fa;
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* 3. Date & Location Lines */
+.hero-details {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 20px;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-details p {
+    margin-bottom: 10px;
+}
+
+/* Icons in Gold */
+.hero-details i {
+    color: var(--secondary-color); /* Gold color */
+    margin-right: 10px;
+}
+/* --- INNER PAGE BANNER (Matches Site A's Sub-pages) --- */
+.page-header {
+    /* Dark Blue Overlay on top of image */
+    background: linear-gradient(rgba(14, 34, 61, 0.9), rgba(14, 34, 61, 0.9)), url('../img/college-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 40px 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 80px; /* Pushes it down below the fixed navbar */
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-color); /* Gold Text */
+}
+
+/* Breadcrumb (Home > Page Name) */
+.breadcrumb {
+    justify-content: center;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 10px;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+/* =========================================
+   COMMITTEE PAGE STYLES (Matches Screenshots)
+   ========================================= */
+
+/* 1. Section Headings (e.g., "Chief Patrons") */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+.section-header h3 {
+    color: var(--primary-color); /* Dark Navy */
+    font-weight: 800;
+    text-transform: capitalize; /* Normal casing, not all caps */
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+/* Optional: Small gold underline for headings */
+.section-header h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color); /* Gold */
+    margin: 10px auto 0;
+}
+
+/* 2. The Card Container */
+.custom-card {
+    background: #ffffff;
+    border-radius: 20px;       /* Soft rounded corners */
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06); /* Very soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;              /* Ensures cards in same row are equal height */
+    border: 1px solid rgba(0,0,0,0.02); /* Faint border */
+}
+
+.custom-card:hover {
+    transform: translateY(-8px); /* Lifts up on hover */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+}
+
+/* 3. The Circular Image */
+.custom-card img {
+    width: 130px;              /* Size matches screenshots */
+    height: 130px;
+    border-radius: 50%;        /* Perfect Circle */
+    object-fit: cover;         /* Prevents stretching */
+    margin-bottom: 20px;
+    
+    /* THE GOLD BORDER LOOK */
+    border: 4px solid #cfa156; 
+    padding: 4px;              /* White space between image and border */
+    background: white;
+}
+
+/* 4. Text Styles */
+.custom-card h5 {
+    color: #0e223d;            /* Dark Navy Name */
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.custom-card .designation {
+    color: #d35400;            /* ORANGE/RED text for Title */
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.custom-card .affiliation {
+    color: #6c757d;            /* Grey text for College/Dept */
+    font-size: 0.85rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+/* --- SCROLL TO TOP BUTTON --- */
+#scrollTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    
+    /* Diamond Shape */
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color); /* Navy Blue */
+    transform: rotate(45deg); /* Rotates square to make diamond */
+    
+    border: 2px solid var(--secondary-color); /* Gold Border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* The Icon inside the diamond */
+#scrollTopBtn i {
+    color: white;
+    font-size: 1.2rem;
+    transform: rotate(-45deg); /* Counter-rotate icon so it stands straight */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Center + Counter-rotate */
+}
+
+/* Hover Effect */
+#scrollTopBtn:hover {
+    background-color: var(--secondary-color); /* Turns Gold */
+    border-color: var(--primary-color);
+    bottom: 35px; /* Slight lift effect */
+}
+
+#scrollTopBtn:hover i {
+    color: var(--primary-color); /* Icon turns Navy */
+}
+/* --- HOME PAGE CONTENT SECTION --- */
+.home-content-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.home-section-title {
+    color: var(--primary-color); /* Navy */
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.home-section-subtitle {
+    color: #d35400; /* Burnt Orange/Red for contrast (like Site A) */
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.ieee-record {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.visitor-badge {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #555;
+    display: inline-block;
+    margin-bottom: 40px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Paragraph Text */
+.home-text p {
+    text-align: justify; /* Newspaper style alignment */
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* --- CREATIVE OBJECTIVES LIST --- */
+.objectives-list {
+    margin-top: 30px;
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.objectives-list li {
+    position: relative;
+    padding-left: 50px; /* Space for the icon */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* The Custom Icon Container */
+.objectives-list li .icon-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background: var(--primary-color); /* Navy Background */
+    color: var(--secondary-color); /* Gold Icon */
+    border-radius: 50%; /* Circle shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.closing-note {
+    margin-top: 50px;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 20px;
+}
+/* --- UNIVERSAL FOOTER STYLES --- */
+.site-footer {
+    background-color: #003366; /* FORCE NAVY BLUE BACKGROUND */
+    color: #ffffff;            /* White text */
+    padding: 60px 0 20px;      /* Spacing */
+    margin-top: 50px;          /* Separation from content above */
+}
+
+.site-footer h5 {
+    color: #d4af37; /* Gold Headings */
+    margin-bottom: 20px;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.7); /* Light grey links */
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #d4af37; /* Turn gold on hover */
+    padding-left: 5px; /* slight move effect */
+}
+
+.site-footer hr {
+    border-color: rgba(255, 255, 255, 0.2); /* Faint divider line */
+}
+/* --- COMMITTEE PAGE HERO OVERRIDE --- */
+.hero-committee {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('img/committee-bg.jpg') !important;
+    
+    /* THE MAGIC FIX: */
+    /* 'center' centers it left-to-right. */
+    /* '100px' pushes it down from the top. */
+    background-position: center 100px !important; 
+    
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    
+    height: 100vh !important; 
+    width: 100% !important;
+}
+
+/* Keep the text centered */
+.hero-committee .hero-content {
+    margin-top: 0 !important;
+}
+/* --- CALL FOR PAPERS (ACCORDION TRACKS) --- */
+.track-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid #ddd; /* Horizontal lines between tracks */
+    background: transparent;
+}
+
+.track-accordion .accordion-button {
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 20px 0; /* Spacing */
+    box-shadow: none; /* Remove blue glow */
+}
+
+/* When the track is open (Active) */
+.track-accordion .accordion-button:not(.collapsed) {
+    color: #d35400; /* Burnt Orange/Gold highlight when open */
+    background: transparent;
+    box-shadow: none;
+}
+
+/* The content text inside */
+.track-accordion .accordion-body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+    color: #555;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* Custom Arrow Color */
+.track-accordion .accordion-button::after {
+    filter: brightness(0%); /* Makes the arrow black */
+}
+.track-accordion .accordion-button:not(.collapsed)::after {
+    filter: sepia(100%) hue-rotate(10deg) saturate(500%); /* Makes arrow orange when open */
+}
+
+/* Intro Text Justification */
+.cfp-intro p {
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* --- CALL FOR PAPERS HERO (Full Screen Parallax) --- */
+.hero-cfp {
+    position: relative;
+    /* 1. Set the specific image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/cfp_bg.jpg') !important;
+    
+    /* 2. Full Screen Height (Same as Home Page) */
+    height: 100vh !important; 
+    min-height: 600px; /* Safety for small screens */
+    width: 100%;
+
+    /* 3. Parallax Effect (Background stays fixed while you scroll) */
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    
+    /* 4. Alignment Fix */
+    /* 'center top' ensures the top of the image (heads/logos) isn't cut off */
+    background-position: center top !important; 
+
+    /* 5. Flexbox Center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Ensure text is perfectly centered */
+.hero-cfp .hero-content {
+    margin-top: 0 !important;
+    z-index: 2;
+}
+/* --- SCHEDULE PAGE HERO --- */
+.hero-schedule {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/sch_bg.jpg') !important;
+    height: 100vh !important;
+    width: 100%;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-schedule .hero-content {
+    margin-top: 0 !important;
+    z-index: 2;
+}
+
+/* --- SCHEDULE CONTENT CARDS --- */
+.schedule-category-card {
+    background: #fff;
+    border-top: 5px solid #003366; /* Navy Blue Top Border */
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.schedule-category-card:hover {
+    transform: translateY(-5px);
+}
+
+.schedule-category-card h4 {
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.schedule-category-card h4 i {
+    margin-right: 15px;
+    color: #d4af37; /* Gold Icons */
+}
+
+/* Custom Checkmark List */
+.schedule-list {
+    list-style: none;
+    padding: 0;
+}
+
+.schedule-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.schedule-list li::before {
+    content: "\f058"; /* FontAwesome Check Circle */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+}
+
+/* Facility Badge Layout */
+.facility-badge {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.facility-badge i {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-right: 20px;
+    width: 40px;
+    text-align: center;
+}
+
+.facility-badge strong {
+    color: #003366;
+    display: block;
+    font-size: 1.05rem;
+}
+/* --- GUIDELINES PAGE HERO --- */
+.hero-guidelines {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/guide_bg.jpg') !important;
+    height: 100vh !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* --- GUIDELINE BOX STYLES --- */
+.guideline-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border-left: 6px solid var(--primary-color);
+}
+
+.guideline-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(0, 51, 102, 0.1); /* Very light Navy */
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.guideline-card h4 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.guideline-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guideline-card ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+}
+
+.guideline-card ul li::before {
+    content: "\f00c"; /* FontAwesome Check */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+/* --- REGISTRATION PAGE HERO --- */
+.hero-reg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/reg_bg.jpg') !important;
+    height: 100vh !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Pricing Table Styles */
+.reg-table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.reg-table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.reg-table th, .reg-table td {
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.reg-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+/* Package List Icons */
+.package-list {
+    list-style: none;
+    padding: 0;
+}
+
+.package-list li {
+    padding: 15px;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.package-list li i {
+    color: var(--secondary-color);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+/* --- NAVBAR CUSTOM FORMATTING --- */
+.navbar-nav .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 10px 15px !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d4af37 !important; /* Gold on hover */
+}
+
+/* Add a gold underline effect for the active/hover state */
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 15px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: calc(100% - 30px);
+}
+/* --- CONTACT PAGE HERO --- */
+.hero-contact {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('img/contact_bg.jpg') !important;
+    height: 100vh !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Contact Card Styling */
+.contact-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--secondary-color); /* Gold border on hover */
+}
+
+.contact-icon-circle {
+    width: 100px; /* Slightly larger for photos */
+    height: 100px;
+    background: #f0f4f8;
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    overflow: hidden; /* This crops the image to a circle */
+    border: 3px solid #f0f4f8;
+    transition: border-color 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-circle {
+    border-color: var(--secondary-color); /* Gold border on hover */
+}
+
+.contact-icon-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the face isn't stretched */
+}
+
+.contact-name {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+.contact-link i {
+    width: 25px;
+    color: var(--secondary-color);
+}
