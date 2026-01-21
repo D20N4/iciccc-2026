@@ -17,4 +17,3 @@ Contact information
 
 It is designed to help participants, authors, and visitors easily access all the essential details about the event.
 
-🔗 Live Website: https://mantu001.github.io/ICICCC-GCET/
