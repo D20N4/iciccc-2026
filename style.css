@@ -855,3 +855,34 @@ img {
     width: 25px;
     color: var(--secondary-color);
 }
+/* Schedule Table Hover Animation */
+.schedule-row {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent; /* Placeholder for the gold line */
+}
+
+.schedule-row:hover {
+    outline: 2px solid #FFD700; /* Gold color */
+    outline-offset: -2px;
+    background-color: rgba(255, 215, 0, 0.05) !important; /* Very light gold tint */
+    transform: scale(1.01); /* Subtle lift effect */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Ensure table cells don't block the outline */
+.schedule-row td {
+    border-bottom: 1px solid #dee2e6;
+}
+/* Remove horizontal scrollbar and fix table width */
+.custom-schedule-table {
+    width: 100% !important;
+    table-layout: fixed; /* Ensures cells stay within the container */
+    margin-bottom: 0;
+}
+
+.custom-schedule-table td, 
+.custom-schedule-table th {
+    white-space: normal; /* Allows text to wrap instead of pushing width */
+    word-wrap: break-word;
+}
