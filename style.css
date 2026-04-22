@@ -962,3 +962,41 @@ img {
     font-weight: 800;
     text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
 }
+/* --- AESTHETIC HERO BUTTONS --- */
+.custom-hero-btn {
+    background-color: var(--secondary-color) !important; /* Your Mustard Gold */
+    color: #ffffff !important; /* Pure White Text */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Soft white border */
+    padding: 14px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Deep soft shadow */
+    backdrop-filter: blur(2px); /* Makes button feel premium */
+}
+
+.custom-hero-btn:hover {
+    background-color: var(--primary-color) !important; /* Shifts to Navy on hover */
+    color: var(--secondary-color) !important; /* Text turns Gold */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: var(--secondary-color);
+}
+
+/* Fixes Icon Visibility */
+.custom-hero-btn i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: #ffffff !important; /* Keeps icon white and crisp */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Makes icon "pop" */
+}
+
+.custom-hero-btn:hover i {
+    color: var(--secondary-color) !important;
+}
