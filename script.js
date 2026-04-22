@@ -100,3 +100,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadVisitorCount();
 });
+// Conference Countdown Timer
+const countdown = () => {
+    const countDate = new Date("October 8, 2026 09:00:00").getTime();
+    const now = new Date().getTime();
+    const gap = countDate - now;
+
+    // Time calculations
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    // Update HTML
+    if (gap > 0) {
+        document.getElementById("days").innerText = Math.floor(gap / day);
+        document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
+        document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
+        document.getElementById("seconds").innerText = Math.floor((gap % minute) / second);
+    }
+};
+
+// Run countdown every second
+setInterval(countdown, 1000);
+countdown(); // Run immediately on load

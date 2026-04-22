@@ -886,3 +886,79 @@ img {
     white-space: normal; /* Allows text to wrap instead of pushing width */
     word-wrap: break-word;
 }
+/* --- REFINED INNER PAGE HERO (All tabs except Home) --- */
+.hero-section {
+   position: relative;
+    height: 35vh !important; /* Shorter, professional height like GU */
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    margin-top: 80px; /* Prevents overlap with navbar */
+}
+
+/* Darker Overlay to make white text pop */
+.hero-section::before {
+   content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(14, 34, 61, 0.75); /* Deep Navy Overlay */
+    z-index: 1;
+}
+
+.hero-content {
+   max-width: 1000px;
+    padding: 20px;
+    z-index: 2;
+    margin-top: 0 !important; /* FIXED: Removed the -100px that was cutting text */
+}
+
+.hero-title {
+    font-size: 2.8rem !important; /* Scaled perfectly for the 30vh height */
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    color: var(--secondary-color); /* Gold color for sub-text */
+    letter-spacing: 1px;
+}
+/* --- FULL-SCREEN HOME PAGE HERO (AS PER SCREENSHOT) --- */
+.hero-main-home {
+    position: relative;
+    height: 100vh !important; /* Full screen height as per your screenshot */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* Background setup */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('img/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 0; /* No margin needed for full screen */
+}
+
+.hero-main-home .hero-content {
+    z-index: 2;
+    margin-top: 0 !important; /* Ensures everything is perfectly centered */
+}
+
+.hero-main-home h1 {
+    font-size: 4.5rem !important; /* Large title size from screenshot */
+    font-weight: 800;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
+}
