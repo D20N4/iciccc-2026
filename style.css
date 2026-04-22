@@ -886,47 +886,79 @@ img {
     white-space: normal; /* Allows text to wrap instead of pushing width */
     word-wrap: break-word;
 }
-
-/* Container to force single line and spacing */
-.hero-btns-container {
+/* --- REFINED INNER PAGE HERO (All tabs except Home) --- */
+.hero-section {
+   position: relative;
+    height: 35vh !important; /* Shorter, professional height like GU */
+    min-height: 300px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevents wrapping on large screens */
-    gap: 15px; /* Consistent spacing between buttons */
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    margin-top: 80px; /* Prevents overlap with navbar */
 }
 
-/* Unified Button Style */
-.btn-hero-gold {
-    background-color: #d4af37 !important; /* Your specific gold color */
-    color: white !important;
-    font-weight: 700;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.95rem;
+/* Darker Overlay to make white text pop */
+.hero-section::before {
+   content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(14, 34, 61, 0.75); /* Deep Navy Overlay */
+    z-index: 1;
+}
+
+.hero-content {
+   max-width: 1000px;
+    padding: 20px;
+    z-index: 2;
+    margin-top: 0 !important; /* FIXED: Removed the -100px that was cutting text */
+}
+
+.hero-title {
+    font-size: 2.8rem !important; /* Scaled perfectly for the 30vh height */
+    font-weight: 800;
+    color: #ffffff;
     text-transform: uppercase;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    color: var(--secondary-color); /* Gold color for sub-text */
+    letter-spacing: 1px;
+}
+/* --- FULL-SCREEN HOME PAGE HERO (AS PER SCREENSHOT) --- */
+.hero-main-home {
+    position: relative;
+    height: 100vh !important; /* Full screen height as per your screenshot */
+    min-height: 600px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-    white-space: nowrap; /* Keeps text on one line within button */
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* Background setup */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('img/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 0; /* No margin needed for full screen */
 }
 
-.btn-hero-gold:hover {
-    background-color: #b8962d !important; /* Slightly darker on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    color: white !important;
+.hero-main-home .hero-content {
+    z-index: 2;
+    margin-top: 0 !important; /* Ensures everything is perfectly centered */
 }
 
-/* Responsive adjustment for small phones */
-@media (max-width: 992px) {
-    .hero-btns-container {
-        flex-wrap: wrap; /* Allows stacking only on mobile/tablets */
-    }
-    .btn-hero-gold {
-        width: 100%; /* Full width on mobile for better UX */
-        justify-content: center;
-    }
+.hero-main-home h1 {
+    font-size: 4.5rem !important; /* Large title size from screenshot */
+    font-weight: 800;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
 }
