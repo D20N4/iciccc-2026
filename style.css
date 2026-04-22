@@ -886,3 +886,47 @@ img {
     white-space: normal; /* Allows text to wrap instead of pushing width */
     word-wrap: break-word;
 }
+
+/* Container to force single line and spacing */
+.hero-btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents wrapping on large screens */
+    gap: 15px; /* Consistent spacing between buttons */
+}
+
+/* Unified Button Style */
+.btn-hero-gold {
+    background-color: #d4af37 !important; /* Your specific gold color */
+    color: white !important;
+    font-weight: 700;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Keeps text on one line within button */
+}
+
+.btn-hero-gold:hover {
+    background-color: #b8962d !important; /* Slightly darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    color: white !important;
+}
+
+/* Responsive adjustment for small phones */
+@media (max-width: 992px) {
+    .hero-btns-container {
+        flex-wrap: wrap; /* Allows stacking only on mobile/tablets */
+    }
+    .btn-hero-gold {
+        width: 100%; /* Full width on mobile for better UX */
+        justify-content: center;
+    }
+}

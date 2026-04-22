@@ -66,37 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error loading footer:", error));
   }
-
-  //=========================================
-  // 4. RELIABLE DYNAMIC VISITOR COUNT
-  //=========================================
-  function loadVisitorCount() {
-    const counterElement = document.getElementById("v-count");
-    if (!counterElement) return;
-
-    // counterapi.dev is more stable than countapi.xyz
-    // Use your specific college domain as the namespace
-    const namespace = "iciccc2026-gcet-edu";
-    const key = "home_visits";
-
-    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Counter Service Error");
-        return res.json();
-      })
-      .then((data) => {
-        // Success: Real dynamic data from the API
-        counterElement.innerText = data.count.toLocaleString();
-      })
-      .catch((err) => {
-        console.error("Counter failed:", err);
-        // Dynamic Fallback: Increments locally if the server is down
-        let localCount = parseInt(localStorage.getItem("v_sim") || "1240");
-        localCount++;
-        localStorage.setItem("v_sim", localCount);
-        counterElement.innerText = localCount.toLocaleString();
-      });
-  }
-
-  loadVisitorCount();
-});
