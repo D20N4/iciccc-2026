@@ -1000,3 +1000,75 @@ img {
 .custom-hero-btn:hover i {
     color: var(--secondary-color) !important;
 }
+
+/* --- CONFERENCE TRACK DETAILS --- */
+.track-chairs {
+    color: #daa520;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    padding-left: 10px;
+    border-left: 3px solid #daa520;
+}
+.chair-names {
+    color: #555;
+    font-weight: 400;
+}
+.track-container {
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
+    background-color: #ffffff;
+}
+.track-box {
+    padding: 50px 40px;
+    height: 100%;
+}
+.track-title {
+    color: #000000; 
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.track-desc {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-style: italic;
+}
+.track-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.track-list li {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 28px;
+    line-height: 1.5;
+}
+.track-list li::before {
+    content: "■";
+    color: #007bff; 
+    font-size: 0.75rem;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Guaranteed Perfect Grid Lines */
+@media (min-width: 768px) {
+    .grid-border-right { border-right: 2px solid #007bff; }
+    .grid-border-bottom { border-bottom: 2px solid #007bff; }
+}
+@media (max-width: 767px) {
+    .grid-border-bottom { border-bottom: 2px solid #007bff; }
+    .grid-border-right { border-bottom: 2px solid #007bff; border-right: none; }
+    .mobile-border-bottom { border-bottom: 2px solid #007bff; }
+}
