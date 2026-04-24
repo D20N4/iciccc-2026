@@ -1072,3 +1072,34 @@ img {
     .grid-border-right { border-bottom: 2px solid #007bff; border-right: none; }
     .mobile-border-bottom { border-bottom: 2px solid #007bff; }
 }
+.organizing-dept {
+    background: rgba(255, 255, 255, 0.1); /* Subtle glass effect */
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dept-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.dept-badge {
+    background-color: var(--secondary-color) !important; /* Your Gold */
+    color: white; /* Your Navy */
+    font-weight: 800;
+    margin: 0 5px;
+    padding: 8px 15px !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Ensure icons in this section stay gold */
+.organizing-dept i {
+    color: var(--secondary-color);
+}
