@@ -723,6 +723,61 @@ img {
     background-color: #f8f9fa;
 }
 
+/* Account Details Card */
+.account-details-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.account-details-header {
+    background-color: #dce8f3;
+    color: var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 14px 20px;
+    text-transform: none;
+}
+
+.account-details-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.account-details-table tr {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.account-details-table tr:last-child {
+    border-bottom: none;
+}
+
+.account-details-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.account-details-table tr:nth-child(even) {
+    background-color: #e8f2fa;
+}
+
+.account-details-table td {
+    padding: 14px 20px;
+    color: var(--primary-color);
+    vertical-align: middle;
+}
+
+.account-details-table td:first-child {
+    font-weight: 700;
+    width: 42%;
+    border-right: 1px solid var(--accent-color);
+}
+
 /* Package List Icons */
 .package-list {
     list-style: none;
