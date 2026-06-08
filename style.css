@@ -398,6 +398,185 @@ img {
     border-left: 4px solid var(--secondary-color);
     padding-left: 20px;
 }
+
+/* --- EXPLORE NCR & HERITAGE SECTION --- */
+.heritage-section {
+    background-color: #fafafa;
+    padding: 80px 0;
+}
+
+.heritage-intro {
+    max-width: 720px;
+}
+
+.heritage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(14, 34, 61, 0.05);
+    border: 1px solid rgba(14, 34, 61, 0.1);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.heritage-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: none;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.heritage-title-accent {
+    font-style: italic;
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.heritage-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 340px;
+    gap: 24px;
+}
+
+.heritage-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.heritage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.heritage-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.heritage-card:hover img {
+    transform: scale(1.08);
+}
+
+.heritage-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(14, 34, 61, 0.92) 0%, rgba(14, 34, 61, 0.25) 55%, transparent 100%);
+}
+
+.heritage-card-number {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.25);
+    line-height: 1;
+    z-index: 2;
+}
+
+.heritage-card-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    color: #fff;
+}
+
+.heritage-card-location {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 8px;
+}
+
+.heritage-card-location i {
+    color: var(--secondary-color);
+    margin-right: 6px;
+}
+
+.heritage-card-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-transform: none;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.heritage-card-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.heritage-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.heritage-card-link:hover {
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .heritage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 320px;
+    }
+}
+
+@media (max-width: 575px) {
+    .heritage-section {
+        padding: 60px 0;
+    }
+
+    .heritage-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+}
+
 /* --- UNIVERSAL FOOTER STYLES --- */
 .site-footer {
     background-color: #003366; /* FORCE NAVY BLUE BACKGROUND */
