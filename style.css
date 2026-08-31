@@ -1337,3 +1337,11 @@ img {
 .organizing-dept i {
     color: var(--secondary-color);
 }
+/* IEEE logo - visually enlarged without increasing navbar height */
+.navbar-brand .ieee-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transform: scale(1.5);
+    transform-origin: center;
+}
