@@ -1345,3 +1345,17 @@ img {
     transform: scale(1.5);
     transform-origin: center;
 }
+.hero-venue-mode {
+    margin-top: -5px;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.hero-venue-mode i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+/* Keep homepage hero content clear of the taller fixed header */
+.hero-main-home .hero-content {
+    transform: translateY(30px);
+}
