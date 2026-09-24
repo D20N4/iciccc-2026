@@ -92,5 +92,7 @@ const countdown = () => {
 };
 
 // Run countdown every second
-setInterval(countdown, 1000);
-countdown(); // Run immediately on load
+if (document.getElementById("days")) {
+  setInterval(countdown, 1000);
+  countdown();
+}
