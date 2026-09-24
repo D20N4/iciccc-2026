@@ -539,6 +539,7 @@ img {
     margin-bottom: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1358,4 +1359,137 @@ img {
 /* Keep homepage hero content clear of the taller fixed header */
 .hero-main-home .hero-content {
     transform: translateY(30px);
+}
+
+/* Tentative Paper Presentation Schedule */
+.tentative-schedule-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tentative-schedule-table th,
+.tentative-schedule-table td {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}
+
+.tentative-schedule-table th:nth-child(1),
+.tentative-schedule-table td:nth-child(1) {
+    width: 18%;
+}
+
+.tentative-schedule-table th:nth-child(2),
+.tentative-schedule-table td:nth-child(2) {
+    width: 52%;
+}
+
+.tentative-schedule-table th:nth-child(3),
+.tentative-schedule-table td:nth-child(3) {
+    width: 30%;
+}
+/* Schedule dropdown - open on hover */
+.navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* Keep the existing navbar appearance */
+.navbar-nav .nav-item.dropdown > .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Match the existing dropdown styling */
+.navbar-nav .dropdown-menu {
+    border: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-nav .dropdown-item {
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+/* ==========================================
+   SCHEDULE DROPDOWN
+   ========================================== */
+
+.schedule-dropdown {
+    position: relative;
+}
+
+/* Schedule link */
+.schedule-dropdown > .schedule-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    text-transform: none !important;
+    white-space: nowrap;
+    color: #002147 !important;
+    background-color: transparent;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Down arrow */
+.schedule-arrow {
+    display: inline-block !important;
+    width: 0;
+    height: 0;
+    margin-top: 2px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #002147;
+    vertical-align: middle;
+    transition: transform 0.2s ease, border-top-color 0.2s ease;
+}
+
+/* Hovered Schedule item */
+.schedule-dropdown:hover > .schedule-link {
+    color: #ffffff !important;
+    background-color: #243f8f !important;
+}
+
+/* White arrow when hovered */
+.schedule-dropdown:hover .schedule-arrow {
+    border-top-color: #ffffff;
+    transform: translateY(1px);
+}
+
+/* Dropdown opens on hover */
+.schedule-dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown appearance */
+.schedule-dropdown > .dropdown-menu {
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0 0 6px 6px;
+    min-width: 230px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Dropdown items */
+.schedule-dropdown .dropdown-item {
+    padding: 12px 20px;
+    color: #343a40;
+    font-size: 1rem;
+    text-transform: none !important;
+}
+
+/* Dropdown item hover */
+.schedule-dropdown .dropdown-item:hover {
+    color: #ffffff;
+    background-color: #243f8f;
 }
