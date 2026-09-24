@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  loadVisitorCount();
+  // loadVisitorCount();
 });
 // Conference Countdown Timer
 const countdown = () => {
