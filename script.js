@@ -72,27 +72,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Conference Countdown Timer
 const countdown = () => {
-    const countDate = new Date("October 8, 2026 09:00:00").getTime();
-    const now = new Date().getTime();
-    const gap = countDate - now;
+  const days = document.getElementById("days");
+  const hours = document.getElementById("hours");
+  const minutes = document.getElementById("minutes");
+  const seconds = document.getElementById("seconds");
 
-    // Time calculations
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+  if (!days || !hours || !minutes || !seconds) {
+    return;
+  }
 
-    // Update HTML
-    if (gap > 0) {
-        document.getElementById("days").innerText = Math.floor(gap / day);
-        document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
-        document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
-        document.getElementById("seconds").innerText = Math.floor((gap % minute) / second);
-    }
+  const countDate = new Date("October 8, 2026 09:00:00").getTime();
+  const gap = countDate - Date.now();
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  if (gap > 0) {
+    days.innerText = Math.floor(gap / day);
+    hours.innerText = Math.floor((gap % day) / hour);
+    minutes.innerText = Math.floor((gap % hour) / minute);
+    seconds.innerText = Math.floor((gap % minute) / second);
+  }
 };
 
-// Run countdown every second
-if (document.getElementById("days")) {
-  setInterval(countdown, 1000);
-  countdown();
-}
+setInterval(countdown, 1000);
+countdown();
+
+// // Run countdown every second
+// if (document.getElementById("days")) {
+//   setInterval(countdown, 1000);
+//   countdown();
+// }
