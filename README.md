@@ -16,4 +16,3 @@ Registration details
 Contact information
 
 It is designed to help participants, authors, and visitors easily access all the essential details about the event.
-
