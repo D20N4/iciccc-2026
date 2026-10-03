@@ -1493,3 +1493,68 @@ img {
     color: #ffffff;
     background-color: #243f8f;
 }
+/* Invited dignitaries section only */
+.invited-dignitaries-section {
+    width: 100%;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.invited-dignitaries-section .dignitary-category {
+    margin: 2rem 0 1.25rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: none;
+}
+
+.invited-dignitaries-section .dignitary-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.25rem;
+}
+
+.invited-dignitaries-section .dignitary-card {
+    display: flex;
+    flex: 0 1 calc(33.333% - 1rem);
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    height: auto;
+    max-width: 330px;
+    min-width: 0;
+    padding: 30px 20px;
+}
+
+.invited-dignitaries-section .dignitary-card img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+    border: 4px solid #cfa156;
+    border-radius: 50%;
+    padding: 4px;
+    background: #fff;
+    object-fit: cover;
+}
+
+.invited-dignitaries-section .dignitary-card h5 {
+    overflow-wrap: anywhere;
+    text-transform: none;
+}
+
+@media (max-width: 991.98px) {
+    .invited-dignitaries-section .dignitary-card {
+        flex-basis: calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .invited-dignitaries-section .dignitary-card {
+        flex-basis: 100%;
+        max-width: 360px;
+    }
+}
